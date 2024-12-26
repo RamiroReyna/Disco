@@ -34,7 +34,7 @@
             padding: 20px;
             box-sizing: border-box;
             margin: auto;
-            flex-wrap: wrap; /* Permite que los elementos se acomoden en diferentes filas */
+            flex-wrap: wrap;
         }
 
         /* Songs Container */
@@ -44,7 +44,7 @@
             border-radius: 15px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
             text-align: center;
-            width: 40%;
+            width: 48%; /* Ocupa la mitad del espacio */
         }
 
         .song {
@@ -76,10 +76,10 @@
 
         /* Collage Container */
         .collage-container {
-            width: 60%;
+            width: 48%; /* Ocupa la mitad del espacio */
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+            grid-template-rows: repeat(3, 1fr); /* Tres filas */
             gap: 10px;
             align-items: center;
         }
@@ -111,31 +111,20 @@
 
             .collage-container {
                 width: 100%; /* Ocupa toda la pantalla en pantallas pequeñas */
-                grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas más pequeñas */
-                grid-template-rows: repeat(3, 1fr); /* Tres filas en pantallas más pequeñas */
-            }
-
-            h1 {
-                font-size: 2rem; /* Ajusta el tamaño del título */
-            }
-
-            .song {
-                font-size: 1.2rem; /* Ajusta el tamaño del texto de las canciones */
+                grid-template-columns: repeat(2, 1fr); /* Mantiene dos columnas */
+                grid-template-rows: repeat(3, 1fr); /* Mantiene tres filas */
             }
         }
 
         @media (max-width: 480px) {
-            h1 {
-                font-size: 1.5rem; /* Reduce aún más el tamaño del título en pantallas muy pequeñas */
-            }
-
-            .song {
-                font-size: 1rem; /* Ajusta aún más el tamaño de las canciones */
+            .songs-container {
+                width: 100%; /* Ocupa toda la pantalla en pantallas muy pequeñas */
             }
 
             .collage-container {
-                grid-template-columns: 1fr; /* Una sola columna en pantallas muy pequeñas */
-                grid-template-rows: repeat(6, 1fr); /* Una fila por imagen en pantallas muy pequeñas */
+                width: 100%; /* Ocupa toda la pantalla en pantallas pequeñas */
+                grid-template-columns: repeat(2, 1fr); /* Mantiene dos columnas */
+                grid-template-rows: repeat(3, 1fr); /* Mantiene tres filas */
             }
         }
     </style>
