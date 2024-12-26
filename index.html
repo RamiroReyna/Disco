@@ -27,14 +27,13 @@
         /* Layout */
         .main-container {
             display: flex;
-            flex: 1;
-            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: space-between;
             max-width: 1200px;
             width: 100%;
             padding: 20px;
             box-sizing: border-box;
             margin: auto;
-            flex-wrap: wrap;
         }
 
         /* Songs Container */
@@ -45,6 +44,7 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
             text-align: center;
             width: 48%; /* Ocupa la mitad del espacio */
+            margin-bottom: 20px;
         }
 
         .song {
@@ -104,27 +104,24 @@
 
         /* Media Queries for Responsiveness */
         @media (max-width: 768px) {
-            .songs-container {
-                width: 100%; /* Ocupa toda la pantalla en pantallas pequeñas */
-                margin-bottom: 20px; /* Agrega un espacio inferior */
+            .songs-container, .collage-container {
+                width: 100%; /* Ambas ocupan el 100% en pantallas pequeñas */
             }
 
             .collage-container {
-                width: 100%; /* Ocupa toda la pantalla en pantallas pequeñas */
-                grid-template-columns: repeat(2, 1fr); /* Mantiene dos columnas */
-                grid-template-rows: repeat(3, 1fr); /* Mantiene tres filas */
+                grid-template-columns: 1fr 1fr; /* Dos columnas */
+                grid-template-rows: repeat(3, 1fr); /* Tres filas */
             }
         }
 
         @media (max-width: 480px) {
-            .songs-container {
-                width: 100%; /* Ocupa toda la pantalla en pantallas muy pequeñas */
+            .songs-container, .collage-container {
+                width: 100%; /* Ambas ocupan el 100% en pantallas muy pequeñas */
             }
 
             .collage-container {
-                width: 100%; /* Ocupa toda la pantalla en pantallas pequeñas */
-                grid-template-columns: repeat(2, 1fr); /* Mantiene dos columnas */
-                grid-template-rows: repeat(3, 1fr); /* Mantiene tres filas */
+                grid-template-columns: 1fr 1fr; /* Dos columnas */
+                grid-template-rows: repeat(3, 1fr); /* Tres filas */
             }
         }
     </style>
